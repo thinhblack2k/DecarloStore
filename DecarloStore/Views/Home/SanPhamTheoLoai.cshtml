@@ -1,5 +1,5 @@
 ﻿@{
-	ViewData["Title"] = "Guha Store";
+	ViewData["Title"] = "Sản phẩm theo loại";
 	Layout = "~/Views/Shared/_LayoutOgani.cshtml";
 }
 
@@ -11,6 +11,8 @@
 	@await Html.PartialAsync("PartialSanPham", item);
 }
 <div class="product__pagination">
-	@Html.PagedListPager(Model, page=>Url.Action("Index", new{page=page}))
+    @Html.PagedListPager(Model, page=>Url.Action("SanPhamTheoLoai", new{maloai=ViewBag.maloai, page=page}))
 </div>
+
+
 
